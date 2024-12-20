@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Membership Payment</title>
+    <link rel="stylesheet" href="styles.css"> 
+<link href="form2.css" rel="stylesheet" />
+    <script src="jas.js" defer></script>
+</head>
+<body>
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li class="active"><a href="#">Payment</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Payment Information</h2>
+
+        <form id="paymentForm" name="paymentForm" method="post" action="payment-success.html"> 
+            <table>
+                <caption>Order Summary</caption>
+                <tr>
+                    <td>Membership Plan:</td>
+                    <td id="selectedPlan"></td> 
+                </tr>
+                <tr>
+                    <td>Duration:</td>
+                    <td id="selectedDuration"></td> 
+                </tr>
+                <tr>
+                    <td>Subtotal:</td>
+                    <td id="subtotal">$0.00</td> 
+                </tr>
+                <tr>
+                    <td>Tax (5%):</td>
+                    <td id="tax">$0.00</td> 
+                </tr>
+                <tr>
+                    <td><strong>Total:</strong></td>
+                    <td id="total"><strong>$0.00</strong></td> 
+                </tr>
+            </table>
+
+            <h3>Payment Details</h3>
+
+            <div>
+                <label for="cardName">Name on Card:</label>
+                <input type="text" id="cardName" name="cardName" required>
+            </div>
+
+            <div>
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required pattern="[0-9]{16}"> 
+            </div>
+
+            <div>
+                <label for="expMonth">Expiration Date:</label>
+                <select id="expMonth" name="expMonth">
+                    <option value="">Month</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select id="expYear" name="expYear">
+                    <option value="">Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="cvc">CVC:</label>
+                <input type="text" id="cvc" name="cvc" required pattern="[0-9]{3,4}"> 
+            </div>
+
+            <button type="submit">Pay Now</button>
+        </form>
+    </main>
+
+  </body>
+</html>

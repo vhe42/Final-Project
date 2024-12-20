@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - Gym</title>
+    <link rel="stylesheet" href="styles.css">
+<link href="form2.css" rel="stylesheet" />
+    <script src="jas.js" defer></script>
+</head>
+
+<body>
+    <header>
+          <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="active"><a href="#">Membership</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Membership Application</h2>
+
+        <form id="membershipForm" name="membershipForm" action="pay.html" method="get"> 
+            <div>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div>
+                <label for="dateOfBirth">Date of Birth:</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required> 
+            </div>
+
+            <div>
+                <label for="plan">Membership Plan:</label>
+                <select name="plan" id="plan">
+                    <option value="">Select a Plan</option>
+                    <option value="Basic ($29.99/month)">Basic ($29.99/month)</option> 
+                    <option value="Premium ($49.99/month)">Premium ($49.99/month) - Includes group classes</option>
+                    <option value="Elite ($79.99/month)">Elite ($79.99/month) - Includes group classes, personal training sessions, and spa access</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="duration">Duration:</label>
+                <select name="duration" id="duration">
+                    <option value="1">1 Month</option>
+                    <option value="3">3 Months</option>
+                    <option value="6">6 Months</option>
+                    <option value="12">1 Year</option>
+                </select>
+            </div>
+
+            <div id="planDetails"></div> 
+
+            <div class="total">
+                <h3>Total Cost:</h3>
+                <span id="totalCost">$0.00</span>
+            </div>
+
+            <button type="button" onclick="calculateTotal()">Calculate</button>
+            <button type="submit">Continue to Payment</button> 
+        </form>
+    </main>
+
+
+</body>
+</html>
